@@ -28,7 +28,7 @@ export default function Navbar({ search, setSearch, scrollToProducts }) {
           <span className="search-icon">🔍</span>
           <input
             type="text"
-            placeholder="Search jewelry..."
+            placeholder="Search jewelry . . ."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={(e) => {
