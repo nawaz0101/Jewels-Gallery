@@ -22,29 +22,27 @@
   align-items: center;
 }
 
-/* LOGO */
-/* CSS for the jewelry-themed logo */
+/* ===========================
+   LOGO
+=========================== */
 .logo {
-  font-family: 'Cinzel', serif; /* Elegant luxury serif font */
+  font-family: 'Cinzel', serif;
   font-size: 1.5rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.5em;
   position: relative;
 
-  /* Gold gradient text */
   background: linear-gradient(45deg, #ffd700, #ffb800, #fffacd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Text shadow for depth */
   text-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 0 10px rgba(255, 223, 0, 0.3);
 
-  /* Animate shimmer */
   animation: shimmer 2s infinite linear;
+  padding: 20px;
 }
 
-/* Optional jewel sparkle icon */
 .logo::after {
   content: '💎';
   position: absolute;
@@ -54,19 +52,17 @@
   animation: sparkle 2s infinite;
 }
 
-/* Shimmer animation across the text */
 @keyframes shimmer {
   0% { background-position: -500px 0; }
   100% { background-position: 500px 0; }
 }
 
-/* Sparkle animation for the diamond */
 @keyframes sparkle {
   0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
   50% { transform: scale(1.2) rotate(15deg); opacity: 0.7; }
 }
 
-/* Responsive font for smaller screens */
+/* Responsive font */
 @media (max-width: 600px) {
   .logo {
     font-size: 2rem;
@@ -78,6 +74,7 @@
 =========================== */
 .search-row {
   width: 75%;
+  margin: 0 auto;
 }
 
 .search-box {
@@ -141,7 +138,7 @@
 }
 
 /* ===========================
-   MOBILE MENU
+   NAV LINKS
 =========================== */
 .nav-links {
   display: flex;
@@ -190,12 +187,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-items: center;
     flex: 1;
     margin: 0 40px;
+    width: auto;
   }
 
-  .search-box{
+  .search-box {
     width: 50%;
   }
 
@@ -211,5 +208,65 @@
 
   .nav-links a {
     padding: 0;
+  }
+}
+
+/* ===========================
+   MOBILE FIX (ONLY CHANGE)
+=========================== */
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-top {
+    position: relative;
+    height: 60px; /* to reserve space for absolute logo */
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.2rem;
+    white-space: nowrap;
+    letter-spacing: 0.2em;
+    margin: 0;
+    top: 0;
+  }
+
+  .search-row {
+    width: 70%;
+    margin: 10px auto 10px; /* margin top for space below logo */
+  }
+
+  /* Nav links horizontal below search bar, always visible */
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 25px !important;
+
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    position: static !important;
+    right: auto !important;
+  }
+
+  /* Remove vertical padding and center text */
+  .nav-links a {
+    padding: 0 !important;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Hide hamburger on mobile */
+  .hamburger {
+    display: none;
   }
 }
