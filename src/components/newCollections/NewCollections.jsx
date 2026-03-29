@@ -1,4 +1,4 @@
-import "./NewCollections.css";
+import "./newcollections.css";
 
 const newCollections = [
   
