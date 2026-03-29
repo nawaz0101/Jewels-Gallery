@@ -65,7 +65,7 @@
 /* Responsive font */
 @media (max-width: 600px) {
   .logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -221,14 +221,14 @@
 
   .nav-top {
     position: relative;
-    height: 60px; /* to reserve space for absolute logo */
+    height: 50px; /* to reserve space for absolute logo */
   }
 
   .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     white-space: nowrap;
     letter-spacing: 0.2em;
     margin: 0;
@@ -236,7 +236,7 @@
   }
 
   .search-row {
-    width: 70%;
+    width: 50%;
     margin: 10px auto 10px; /* margin top for space below logo */
   }
 
