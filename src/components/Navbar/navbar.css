@@ -1,0 +1,215 @@
+/* ===========================
+   NAVBAR BASE
+=========================== */
+.navbar {
+  background: #0f0f0f;
+  padding: 14px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===========================
+   TOP BAR
+=========================== */
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+/* CSS for the jewelry-themed logo */
+.logo {
+  font-family: 'Cinzel', serif; /* Elegant luxury serif font */
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  position: relative;
+
+  /* Gold gradient text */
+  background: linear-gradient(45deg, #ffd700, #ffb800, #fffacd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Text shadow for depth */
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 0 10px rgba(255, 223, 0, 0.3);
+
+  /* Animate shimmer */
+  animation: shimmer 2s infinite linear;
+}
+
+/* Optional jewel sparkle icon */
+.logo::after {
+  content: '💎';
+  position: absolute;
+  top: -10px;
+  right: -40px;
+  font-size: 1.5rem;
+  animation: sparkle 2s infinite;
+}
+
+/* Shimmer animation across the text */
+@keyframes shimmer {
+  0% { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
+}
+
+/* Sparkle animation for the diamond */
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(15deg); opacity: 0.7; }
+}
+
+/* Responsive font for smaller screens */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+.search-row {
+  width: 75%;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #151515;
+  border: 1px solid #fff8f8;
+  border-radius: 30px;
+  padding: 10px 14px;
+  transition: 0.3s;
+}
+
+.search-box:focus-within {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.search-icon {
+  margin-right: 8px;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* ===========================
+   HAMBURGER
+=========================== */
+.hamburger {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 2px;
+  width: 24px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.nav-links.active {
+  max-height: 300px;
+  padding: 10px 0;
+}
+
+.nav-links a {
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+/* ===========================
+   DESKTOP
+=========================== */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    margin: 0;
+  }
+
+  .nav-top {
+    flex: 0;
+  }
+
+  .search-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    flex: 1;
+    margin: 0 40px;
+  }
+
+  .search-box{
+    width: 50%;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    max-height: none;
+    gap: 30px;
+  }
+
+  .nav-links a {
+    padding: 0;
+  }
+}

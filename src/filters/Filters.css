@@ -1,0 +1,82 @@
+.filters {
+  width: 260px;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  padding: 2rem;
+  border-radius: 16px;
+  height: fit-content;
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.08);
+}
+
+/* HEADER */
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.filters h3 {
+  color: #d4af37;
+}
+
+/* RESET BUTTON */
+.reset-btn {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* FILTER GROUP */
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  color: #d4af37;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* SELECT */
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  background: #0f0f0f;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.filter-group select:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+
+/* ✅ DESKTOP ONLY STICKY */
+@media (min-width: 769px) {
+  .filters {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+
+/* ✅ MOBILE FIX */
+@media (max-width: 768px) {
+  .filters {
+    width: 75%;
+    margin: 0 auto;        /* ✅ centers horizontally */
+    position: static;
+    top: auto;
+  }
+}

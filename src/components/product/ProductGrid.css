@@ -1,0 +1,41 @@
+.shop-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Small tablets */
+@media (min-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .shop-section {
+    padding: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .shop-section {
+    flex-direction: row;
+    padding: 3rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
